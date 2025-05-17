@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumos | Coming Soon</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const countDownDate = new Date("2025-09-01T00:00:00").getTime();
+        const x = setInterval(function () {
+          const now = new Date().getTime();
+          const distance = countDownDate - now;
+          const days = Math.floor(distance / (5000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("timer").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "We Are Live!";
+          }
+        }, 1000);
+      });
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body class="bg-[#0A192F] text-white font-sans flex items-center justify-center min-h-screen">
+    <div class="text-center px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Lumos</h1>
+      <h2 class="text-xl md:text-2xl text-[#3EF4E9] font-medium mb-6">
+        Development Studio
+      </h2>
+      <p class="mb-8 max-w-xl mx-auto text-gray-300">
+        Our new digital experience is launching soon. We craft beautiful web experiences and powerful mobile applications for startups and enterprises.
+      </p>
+      <div id="timer" class="text-2xl md:text-3xl font-mono text-[#3EF4E9] mb-8"></div>
+
+      <form class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="px-4 h-12 w-full rounded-md text-black"
+        />
+        <button
+          class="h-12 px-6 bg-[#3EF4E9] text-black font-semibold text-base rounded-md hover:bg-[#2cd6cb] transition cursor-pointer flex items-center justify-center"
+        >
+          Notify Me
+        </button>
+      </form>
+
+      <div class="mt-10 flex justify-center gap-6 text-[#3EF4E9] text-2xl">
+        <a href="https://www.facebook.com/profile.php?id=61576348592013" aria-label="Facebook" class="hover:text-white">
+          <i class="ph ph-facebook-logo"></i>
+        </a>
+        <a href="https://www.instagram.com/lumos_studio_dev/" aria-label="Instagram" class="hover:text-white">
+          <i class="ph ph-instagram-logo"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-white">
+          <i class="ph ph-linkedin-logo"></i>
+        </a>
+      </div>
+
+      <footer class="mt-12 text-sm text-gray-500">
+        &copy; 2025 Lumos Studio. All rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>
